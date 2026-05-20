@@ -1,0 +1,56 @@
+const prettierConfig = require('eslint-config-prettier');
+
+module.exports = [
+  {
+    files: ['**/*.js'],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'module',
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        require: 'readonly',
+        module: 'readonly',
+        __dirname: 'readonly',
+        Buffer: 'readonly',
+        setTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearTimeout: 'readonly',
+        clearInterval: 'readonly',
+        Promise: 'readonly',
+        JSON: 'readonly',
+        Math: 'readonly',
+        Date: 'readonly',
+        Object: 'readonly',
+        Array: 'readonly',
+        String: 'readonly',
+        Number: 'readonly',
+        RegExp: 'readonly',
+        Error: 'readonly',
+        TypeError: 'readonly',
+        URL: 'readonly',
+        fs: 'readonly',
+        path: 'readonly',
+        os: 'readonly',
+        execSync: 'readonly',
+        encodeURIComponent: 'readonly',
+      },
+    },
+    rules: {
+      'no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+      'no-console': 'off',
+      'prefer-const': 'error',
+      eqeqeq: ['error', 'always'],
+      'no-else-return': 'error',
+      'no-unused-expressions': 'error',
+    },
+  },
+  prettierConfig,
+];
